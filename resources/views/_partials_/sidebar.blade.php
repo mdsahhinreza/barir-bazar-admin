@@ -20,7 +20,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="components-alerts.html">
+                    <a href="{{ route('products') }}">
                         <i class="bi bi-circle"></i><span>Product List</span>
                     </a>
                 </li>

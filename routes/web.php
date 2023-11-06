@@ -29,10 +29,13 @@ Route::get('/dashboard', function () {
 Route::middleware('auth')->group(function () {
 
     // Product 
+    Route::get('/products', [ProductController::class, 'index'])->name('products');
     Route::get('/create-product', [ProductController::class, 'create'])->name('create.product');
+    Route::post('/store-product', [ProductController::class, 'store'])->name('store.product');
 
     // Category 
     Route::get('/create-category', [CategoryController::class, 'create'])->name('create.category');
+    Route::post('/store-category', [CategoryController::class, 'store'])->name('store.category');
 
     // Shop 
     Route::get('/create-shop', [ShopController::class, 'create'])->name('create.shop');

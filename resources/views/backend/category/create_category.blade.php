@@ -19,17 +19,18 @@
                         <h5 class="card-title">Create New Category</h5>
 
                         <!-- General Form Elements -->
-                        <form>
+                        <form action="{{ route('store.category') }}" method="POST">
+                            @csrf
                             <div class="row mb-3">
                                 <label for="inputText" class="col-sm-2 col-form-label">Category Name</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control">
+                                    <input type="text" name="category_name" class="form-control">
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="inputText" class="col-sm-2 col-form-label">Category Slug</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control">
+                                    <input type="text" name="category_slug" class="form-control">
                                 </div>
                             </div>
                             <div class="row mb-3">

@@ -19,56 +19,58 @@
                         <h5 class="card-title">Create New Product</h5>
 
                         <!-- General Form Elements -->
-                        <form>
+                        <form action="{{ route('store.product') }}" method="POST">
+                            @csrf
                             <div class="row mb-3">
                                 <label for="inputText" class="col-sm-2 col-form-label">Product Name</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control">
+                                    <input type="text" name="product_name" class="form-control">
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="inputNumber" class="col-sm-2 col-form-label">Select Category</label>
                                 <div class="col-sm-10">
-                                    <select name="" class="form-control">
-                                        <option value="">Select Category</option>
-                                        <option value="">Food</option>
-                                        <option value="">Glosery</option>
+                                    <select name="category_id" class="form-control">
+                                        <option value="1">Select Category</option>
+                                        <option value="2">Food</option>
+                                        <option value="3">Glosery</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="inputNumber" class="col-sm-2 col-form-label">Select Shop</label>
                                 <div class="col-sm-10">
-                                    <select name="" class="form-control">
-                                        <option value="">Select Shop</option>
-                                        <option value="">shop-1</option>
-                                        <option value="">shop-2</option>
-                                        <option value="">shop-3</option>
+                                    <select name="shop_id" class="form-control">
+                                        <option value="1">Select Shop</option>
+                                        <option value="2">shop-1</option>
+                                        <option value="3">shop-2</option>
+                                        <option value="4">shop-3</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="inputText" class="col-sm-2 col-form-label">Sale Price</label>
                                 <div class="col-sm-10">
-                                    <input type="number" class="form-control">
+                                    <input name="sale_price" type="number" class="form-control">
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="inputText" class="col-sm-2 col-form-label">Market Price</label>
                                 <div class="col-sm-10">
-                                    <input type="number" class="form-control">
+                                    <input name="market_price" type="number" class="form-control">
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="inputNumber" class="col-sm-2 col-form-label">Product Photo</label>
                                 <div class="col-sm-10">
-                                    <input class="form-control custom-cursor-on-hover" type="file" id="formFile">
+                                    <input name="photo" class="form-control custom-cursor-on-hover" type="file"
+                                        id="formFile">
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="inputPassword" class="col-sm-2 col-form-label">Product Details</label>
                                 <div class="col-sm-10">
-                                    <textarea class="form-control" style="height: 100px"></textarea>
+                                    <textarea name="details" class="form-control" style="height: 100px"></textarea>
                                 </div>
                             </div>
                             <div class="row mb-3">
