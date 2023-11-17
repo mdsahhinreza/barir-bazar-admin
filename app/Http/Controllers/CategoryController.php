@@ -12,7 +12,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Category::all();
+        return view('backend.category.category_list', compact('categories'));
     }
 
     /**
@@ -28,9 +29,12 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+        // dd($request->all());
         $category = new Category();
-        $category->neme = new Category();
+        $category->category_name = $request->category_name;
+        $category->category_slug = $request->category_slug;
+        $category->save();
+        return redirect()->back()->with('success', 'Category Created Success');
     }
 
     /**

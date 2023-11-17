@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Shop;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ShopController extends Controller
 {
@@ -11,7 +13,8 @@ class ShopController extends Controller
      */
     public function index()
     {
-        //
+        $shop = Shop::all();
+        return view('backend.shop.shop_list', compact('shop'));
     }
 
     /**
@@ -27,7 +30,17 @@ class ShopController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $shop = new Shop();
+        $shop->name = $request->shop_name;
+        $shop->shop_category = $request->shop_category;
+        $shop->owner_name = $request->shop_owner;
+        $shop->owner_phone = $request->owner_phone_number;
+        $shop->shop_photo = $request->shop_photo;
+        $shop->address = $request->shop_address;
+        $shop->status = 1;
+        $shop->created_by = Auth::user()->id;
+        $shop->save();
+        return redirect()->route('shops')->with('success', 'Category Added Success');
     }
 
     /**

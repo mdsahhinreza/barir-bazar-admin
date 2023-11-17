@@ -39,7 +39,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="components-alerts.html">
+                    <a href="{{ route('categories') }}">
                         <i class="bi bi-circle"></i><span>Category List</span>
                     </a>
                 </li>
@@ -49,7 +49,8 @@
 
         <li class="nav-item">
             <a class="nav-link collapsed" data-bs-target="#shop" data-bs-toggle="collapse" href="#">
-                <i class="bi bi-menu-button-wide"></i><span>Shop</span><i class="bi bi-chevron-down ms-auto"></i>
+                <i class="bi bi-menu-button-wide"></i><span>Shop Management</span><i
+                    class="bi bi-chevron-down ms-auto"></i>
             </a>
             <ul id="shop" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                 <li>
@@ -58,7 +59,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="components-alerts.html">
+                    <a href="{{ route('shops') }}">
                         <i class="bi bi-circle"></i><span>Shop List</span>
                     </a>
                 </li>
@@ -86,7 +87,8 @@
         </li>
         <li class="nav-item">
             <a class="nav-link collapsed" data-bs-target="#orders" data-bs-toggle="collapse" href="#">
-                <i class="bi bi-menu-button-wide"></i><span>Orders</span><i class="bi bi-chevron-down ms-auto"></i>
+                <i class="bi bi-menu-button-wide"></i><span>Orders Management</span><i
+                    class="bi bi-chevron-down ms-auto"></i>
             </a>
             <ul id="orders" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                 <li>
@@ -109,17 +111,18 @@
         </li>
         <li class="nav-item">
             <a class="nav-link collapsed" data-bs-target="#users" data-bs-toggle="collapse" href="#">
-                <i class="bi bi-menu-button-wide"></i><span>Users</span><i class="bi bi-chevron-down ms-auto"></i>
+                <i class="bi bi-menu-button-wide"></i><span>Users Management</span><i
+                    class="bi bi-chevron-down ms-auto"></i>
             </a>
             <ul id="users" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                 <li>
-                    <a href="components-alerts.html">
-                        <i class="bi bi-circle"></i><span>Create User</span>
+                    <a href="{{ route('users') }}">
+                        <i class="bi bi-circle"></i><span>User</span>
                     </a>
                 </li>
                 <li>
-                    <a href="components-alerts.html">
-                        <i class="bi bi-circle"></i><span>User List</span>
+                    <a href="{{ route('users.roles') }}">
+                        <i class="bi bi-circle"></i><span>Role</span>
                     </a>
                 </li>
 
@@ -131,7 +134,7 @@
         <li class="nav-item">
             <a class="nav-link collapsed" href="users-profile.html">
                 <i class="bi bi-person"></i>
-                <span>Report</span>
+                <span>Reports</span>
             </a>
         </li><!-- End Profile Page Nav -->
 

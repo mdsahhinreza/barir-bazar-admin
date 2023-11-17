@@ -179,18 +179,11 @@
 
                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
                     <li class="dropdown-header">
-                        <h6>{{ Auth::User()->name }}</h6>
-                        <span>Web Designer</span>
+                        <h6 class="">{{ Auth::User()->name }}</h6>
+                        <span class="fw-bold text-danger">Super Admin</span>
                     </li>
                     <li>
                         <hr class="dropdown-divider">
-                    </li>
-
-                    <li>
-                        <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
-                            <i class="bi bi-person"></i>
-                            <span>My Profile</span>
-                        </a>
                     </li>
                     <li>
                         <hr class="dropdown-divider">
@@ -205,21 +198,24 @@
                     <li>
                         <hr class="dropdown-divider">
                     </li>
-
-                    <li>
-                        <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
-                            <i class="bi bi-question-circle"></i>
-                            <span>Need Help?</span>
-                        </a>
-                    </li>
                     <li>
                         <hr class="dropdown-divider">
                     </li>
 
                     <li>
                         <a class="dropdown-item d-flex align-items-center" href="#">
-                            <i class="bi bi-box-arrow-right"></i>
-                            <span>Sign Out</span>
+
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                <i class="bi bi-box-arrow-right"></i>
+                                <span
+                                    onclick="event.preventDefault();
+                                this.closest('form').submit();">Sign
+                                    Out</span>
+                                {{-- <x-dropdown-link :href="route('logout')">
+                                    {{ __('Log Out') }}
+                                </x-dropdown-link> --}}
+                            </form>
                         </a>
                     </li>
 
