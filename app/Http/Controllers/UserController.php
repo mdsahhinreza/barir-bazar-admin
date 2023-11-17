@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\UserRole;
+use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -95,7 +96,9 @@ class UserController extends Controller
 
     public function roleDestroy(string $id)
     {
+        $data = UserRole::find($id);
         UserRole::destroy($id);
+        Toastr::error($data->role_name . ' Deleted Successfull', 'Deleted', ["positionClass" => "toast-top-right"]);
         return redirect()->back();
     }
 
@@ -109,7 +112,8 @@ class UserController extends Controller
         $role->role_name = $request->role_name;
         $role->role_slug = $request->role_slug;
         $role->save();
+        Toastr::success($request->role_name . ' New Role Added Success', 'Success', ["positionClass" => "toast-top-right"]);
 
-        return redirect()->route('users.roles')->with('success', 'New Role Added Success');
+        return redirect()->route('users.roles');
     }
 }
